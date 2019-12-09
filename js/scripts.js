@@ -98,21 +98,20 @@ window.onload = () => {
       center: [0, 0],
     };
     const earth = new WE.map('globe', options);
-    const toner = WE.tileLayer('https://tile.stamen.com/toner/{z}/{x}/{y}.png', {
-      attribution:
-      'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.',
-      opacity: 0.6,
-    });
-    toner.addTo(earth);
-
-    let before = null;
-    requestAnimationFrame(function animate(now) {
-      const c = earth.getPosition();
-      const elapsed = before ? now - before : 0;
-      before = now;
-      earth.setCenter([c[0], c[1] + 0.1 * (elapsed / 30)]);
-      requestAnimationFrame(animate);
-    });
+    earth.setView([0, 40], 2);
+    WE.tileLayer(
+      'https://webglearth.github.io/webglearth2-offline/{z}/{x}/{y}.jpg',
+      {
+        tileSize: 256,
+        bounds: [
+          [-85, -180], [85, 180],
+        ],
+        minZoom: 0,
+        maxZoom: 16,
+        attribution: 'WebGLEarth example',
+        tms: true,
+      },
+    ).addTo(earth);
 
     data.forEach((item) => {
       const marker = WE.marker(item.geometry.coordinates).addTo(earth);
