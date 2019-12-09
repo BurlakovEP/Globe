@@ -4,4 +4,6 @@
 
 Для просмотра проекта перейдите по ссылке: https://burlakovep.github.io/Globe/
 
-![alt text](screenshots/image.jpg)
+![alt text](screenshots/image1.jpg)
+
+![alt text](screenshots/image2.jpg)
