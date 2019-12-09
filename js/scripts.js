@@ -98,7 +98,7 @@ window.onload = () => {
       center: [0, 0],
     };
     const earth = new WE.map('globe', options);
-    const toner = WE.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+    const toner = WE.tileLayer('https://tile.stamen.com/toner/{z}/{x}/{y}.png', {
       attribution:
       'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.',
       opacity: 0.6,
